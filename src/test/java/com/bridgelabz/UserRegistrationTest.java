@@ -40,11 +40,11 @@ public class UserRegistrationTest {
 
     //Test To Valid LastName Starts With Cap Letter And It Has Min 3 Letters
     @Test
-    public void givenLastName_Return_True() {
+    public void givenLastName_ShouldStartWith_UpperCase_Return_True() {
         //Checking Validate LastName With Pattern And Storing In result
         boolean result = userRegistration.validateFirstName("Gollaplli");
         //Asserting The Result As Boolean Type True Or False
-        Assertions.assertEquals(true, result);
+        Assertions.assertTrue(result);
     }
 
     @Test
@@ -52,7 +52,7 @@ public class UserRegistrationTest {
         //Checking Validate LastName With Pattern And Storing In result
         boolean result = userRegistration.validateLastName("gollapalli");
         //Asserting The Result As Boolean Type True Or False
-        Assertions.assertEquals(false, result);
+        Assertions.assertFalse(result);
     }
 
     //Test To Valid Email Starts With Small Letter
@@ -80,5 +80,29 @@ public class UserRegistrationTest {
         boolean result = userRegistration.validateEmail("sunilgollapalli19@gmail.com");
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertTrue(result);
+    }
+    //Test To Phone Number Start With Country Code
+    @Test
+    public void givenPhoneNumber_ShouldStartWith_CountryCodeFollowedBy10digits_ReturnTrue() {
+        //Checking Validate Phone Number With Pattern And Storing In result
+        boolean result = userRegistration.validateNum("91 9381938400");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertTrue(result);
+    }
+    //Test To Phone Number Does Not Have 10Numbers Return False
+    @Test
+    public void givenPhoneNumber_DoesNotHave10Numbers_ReturnFalse() {
+        //Checking Validate Phone Number With Pattern And Storing In result
+        boolean result = userRegistration.validateNum("91 9381938");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertFalse(result);
+    }
+    //Test To Phone Number Does Have 10Numbers Return True
+    @Test
+    public void givenPhoneNumber_DoesNotHaveCountryCode_ReturnFalse() {
+        //Checking Validate Phone Number With Pattern And Storing In result
+        boolean result = userRegistration.validateNum("9666110767");
+        //Asserting The Result As Boolean Type True Or False
+        Assertions.assertFalse(result);
     }
 }
