@@ -33,5 +33,12 @@ public class UserRegistration {
         return pattern.matches(Name_pattern, lastName);//Matching The Name Pattern And FirstName And Returning It.
     }
 
+    //Declaring Valid Email Method
+    public boolean validateEmail(String Email) {
+        //Here Declaring The Email Pattern
+        String Email_pattern = "[a-z][a-zA-Z0-9]+([._+#-][a-zA-Z0-9]+)*@[a-zA-Z]{5}+.[a-zA-Z]{2,3}(.[a-zA-Z]{2})?$";
+        return pattern.matches(Email_pattern, Email);//Matching The Email Pattern And Email And Returning It.
+    }
+
 }
 
