@@ -54,11 +54,11 @@ public class UserRegistration {
 
     /*
     Declaring validatePassword method
-    with min 8 digits and with one UpperCase ,Numeric values
+    with min 8 digits and with one UpperCase ,Numeric values,Spl Characters
      */
     public boolean ValidatePassword(String Password) {
         //Here Declaring The Password Pattern
-        String Password_pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9]).{8,}";
+        String Password_pattern = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[@#$%!]).{8,}";
         return pattern.matches(Password_pattern, Password);
     }
 }
