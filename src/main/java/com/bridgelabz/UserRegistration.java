@@ -19,7 +19,7 @@ public class UserRegistration {
     public boolean validateFirstName(String firstName) {
         //Here Declaring The Name Pattern
         String Name_Pattern = "^[A-Z][a-z]{2,}$"; //The First Letter With Cap And Min 3 Letters
-        return pattern.matches(Name_Pattern, firstName);//Matching The Name Pattern And FirstName And Returning It
+        return Pattern.matches(Name_Pattern, firstName);//Matching The Name Pattern And FirstName And Returning It
     }
 
     /*
@@ -51,6 +51,13 @@ public class UserRegistration {
         String Number_pattern = "^[9][1][ ][6-9]{1}[0-9]{9}$";
         return pattern.matches(Number_pattern, PhoneNum);//Matching The Phone Number Pattern And Phone Number And Returning It
     }
+
+    public boolean ValidatePassword(String Password) {
+        //Here Declaring The Password Pattern
+        String Password_pattern = "^(?=.*[a-z])(?=.*[0-9]).{8,}";
+        return pattern.matches(Password_pattern,Password);
+    }
+
 }
 
 

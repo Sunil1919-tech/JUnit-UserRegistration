@@ -105,4 +105,16 @@ public class UserRegistrationTest {
         //Asserting The Result As Boolean Type True Or False
         Assertions.assertFalse(result);
     }
+    @Test
+    public void givenPassword_ShouldMinOf8Digit_ReturnTrue() {
+        boolean result = userRegistration.ValidatePassword("zlatan123");
+        Assertions.assertTrue(result);
+    }
+    //Does Not Fulfill The Criteria
+
+    @Test
+    public void givenPassword_DoesNotContain_Min8Digits_ReturnFalse()  {
+        boolean result = userRegistration.ValidatePassword("zlatan");
+        Assertions.assertFalse(result);
+    }
 }
