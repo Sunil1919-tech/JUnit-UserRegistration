@@ -1,6 +1,9 @@
 package com.bridgelabz;
 
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 /**
  * User registration using Junit testing
  *
@@ -14,75 +17,96 @@ public class UserRegistration {
      Declaring Validate First Name Method
      using the if condition to check enter firstName is valid or not by the user end
      */
-    public boolean validateFirstName(String firstName) {
-        boolean Validation = firstName.matches("^[A-Z][a-z]{2,}$");
-        if (Validation) {
-            System.out.println("Entered FirstName is Valid");
-        } else {
-            System.out.println("Invalid Name \n Enter valid name");
-        }
-        return Validation;
+    //INPUT Validation
+    public static boolean ValidateInput(String input , UserFieldPattern regex ) {
+        boolean result;
+        Pattern pattern = Pattern.compile(regex.pattern);
+        Matcher matcher = pattern.matcher(input);
+        result = matcher.find(); // true or false
+        return  result;
     }
 
-    /*
-     * declaring the lastName Method
-     * @param lastName
-     * @return boolean value
-     */
-    public boolean validateLastName(String lastName) {
-        boolean Validation = lastName.matches("^[A-Z][a-z]{2,}$");
-        if (Validation) {
-            System.out.println("Last Name is Valid");
-        } else {
-            System.out.println("Invalid \n Enter valid Last Name");
+    //First Name Validation
+    public static String ValidateFirstName(String firstName){
+        String result;
+        try {
+            if(ValidateInput(firstName, UserFieldPattern.REGEX_NAME)){
+                result = "valid";
+            }
+            else {
+                throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_FIRSTNAME,"Invalid User Details");
+            }
+        } catch (InvalidUserDetailsException exception) {
+            result = exception.type.toString();
         }
-        return Validation;
+        return result;
     }
 
-    /*
-     *Declaring Valid Email Method
-     * using regex pattern for required email format
-     */
-    public boolean validateEmail(String Email) {
-        boolean Validation = Email.matches("^[a-z][a-zA-Z0-9]+([._+#-][a-zA-Z0-9]+)*@[a-zA-Z0-93]+.[a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$");
-        if (Validation) {
-            System.out.println("Email is Valid");
-        } else {
-            System.out.println("Invalid \n Enter a valid Email");
+    // Last Name Validation
+    public static String  ValidateLastName(String lastName) {
+        String result;
+        try {
+            if (ValidateInput(lastName, UserFieldPattern.REGEX_NAME)) {
+                result = "valid";
+            } else {
+                throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_LASTNAME, "Invalid User Details");
+            }
+        } catch(InvalidUserDetailsException exception) {
+            result = exception.type.toString();
         }
-        return Validation;
+        return result;
     }
 
-    /*
-     *declaring ValidateNumber method
-     * With country code and 10 numbers
-     */
-    public boolean validateNum(String PhoneNum) {
-        boolean Validation = PhoneNum.matches("^[9][1][ ][1-9][0-9]{9}$");
-        if (Validation) {
-            System.out.println("Phone number is Valid");
-        } else {
-            System.out.println("Invalid \n Enter a valid number");
-        }
-        return Validation;
-
+    public static Object Validateemail(String s) {
+        return null;
     }
 
-    /*
-     *Declaring validatePassword method
-     *with min 8 digits and with one UpperCase ,Numeric values,Spl Characters
-     */
-    public boolean ValidatePassword(String Password) {
-        boolean Validation = Password.matches("(?=.*[a-z])(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%!]).{8,}");
-        if (Validation) {
-            System.out.println("Password is Valid");
-        } else {
-            System.out.println("Invalid \n Enter Valid Password");
+    // Email Validation
+    public String ValidateEmail(String email) {
+        String result;
+        try {
+            if (ValidateInput(email, UserFieldPattern.REGEX_EMAIL )){
+                result = "valid";
+            } else {
+                throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_EMAIL, "Invalid User Details");
+            }
+        }catch (InvalidUserDetailsException exception) {
+            result = exception.type.toString();
         }
-        return Validation;
+        return result;
     }
 
-    public void SelectOption() {
+    // Mobile Number Validation
+    public static String ValidatePhoneNumber(String number) {
+        String result;
+        try {
+            if (ValidateInput(number, UserFieldPattern.REGEX_MOBILE_NUMBER)) {
+                result = "valid";
+            } else {
+                throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_PHONE_NUMBER, "Invalid User Details");
+            }
+        } catch (InvalidUserDetailsException exception) {
+            result = exception.type.toString();
+        }
+        return result;
+    }
+
+    // Password Validation
+    public static String ValidatePassword(String Password) {
+        String result;
+        try {
+            if (ValidateInput(Password, UserFieldPattern.REGEX_PASSWORD)) {
+                result = "valid";
+            } else {
+                throw new InvalidUserDetailsException(InvalidUserDetailsException.invalidCredentials.INVALID_PASSWORD, "Invalid User Details");
+            }
+        } catch (InvalidUserDetailsException exception) {
+            result = exception.type.toString();
+        }
+        return result;
+    }
+
+    private static class REGEX_NAME {
 
     }
 }

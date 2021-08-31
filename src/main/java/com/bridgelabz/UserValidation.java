@@ -26,22 +26,22 @@ public class UserValidation extends UserRegistration {
                 case 1:
                     System.out.println("Enter your first name");
                     String firstName = sc.next();
-                    validateFirstName(firstName);
+                    ValidateFirstName(firstName);
                     break;
                 case 2:
                     System.out.println("Enter your Last name");
                     String lastName = sc.next();
-                    validateLastName(lastName);
+                    ValidatePhoneNumber(lastName);
                     break;
                 case 3:
                     System.out.println("Enter your Email");
                     String email = sc.next();
-                    validateEmail(email);
+                    Validateemail(email);
                     break;
                 case 4:
                     System.out.println("Enter your Mobile Number");
                     String mobile = sc.nextLine();
-                    validateNum(mobile);
+                    ValidatePhoneNumber(mobile);
                     break;
                 case 5:
                     System.out.println("Enter your Password");
