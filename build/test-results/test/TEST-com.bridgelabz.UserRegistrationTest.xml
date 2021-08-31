@@ -1,21 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.bridgelabz.UserRegistrationTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-08-25T09:01:07" hostname="LAPTOP-NGQU5TVV" time="0.031">
+<testsuite name="com.bridgelabz.UserRegistrationTest" tests="15" skipped="0" failures="0" errors="0" timestamp="2021-08-25T09:56:59" hostname="LAPTOP-NGQU5TVV" time="0.037">
   <properties/>
-  <testcase name="givenPassword_DoesNotContain_SpecialChar_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.014"/>
-  <testcase name="givenPassword_DoesNotContain_Min8Digits_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
-  <testcase name="givenPhoneNumber_DoesNotHave10Numbers_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
-  <testcase name="givenEmail_ShouldEndsWithCom_ReturnTrue()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPassword_DoesNotContain_SpecialChar_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.016"/>
+  <testcase name="givenPassword_DoesNotContain_Min8Digits_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPhoneNumber_DoesNotHave10Numbers_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenEmail_ShouldEndsWithCom_ReturnTrue()" classname="com.bridgelabz.UserRegistrationTest" time="0.002"/>
   <testcase name="givenEmail_ShouldNotStartsWith_CapLetter_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenPhoneNumber_DoesNotHaveCountryCode_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPhoneNumber_DoesNotHaveCountryCode_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
   <testcase name="givenPassword_ContainsNoUpperCase_NumericNum_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
   <testcase name="givenFirstName_Return_False()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
   <testcase name="givenFirstName_DoNotReturnMinThreeLetters_ReturnFalse()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenFirstName_Return_True()" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
-  <testcase name="givenPassword_ShouldMinWith_8Digit_OneUpperCase_NumericNum_SplCharacter_ReturnTrue()" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
-  <testcase name="givenEmail_ShouldStartsWith_SmallLetter_ReturnTrue()" classname="com.bridgelabz.UserRegistrationTest" time="0.0"/>
+  <testcase name="givenFirstName_Return_True()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenPassword_ShouldMinWith_8Digit_OneUpperCase_NumericNum_SplCharacter_ReturnTrue()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
+  <testcase name="givenEmail_ShouldStartsWith_SmallLetter_ReturnTrue()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
   <testcase name="givenLastName_ShouldNotStart_withLowerCase_Return_False()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
   <testcase name="givenPhoneNumber_ShouldStartWith_CountryCodeFollowedBy10digits_ReturnTrue()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <testcase name="givenLastName_ShouldStartWith_UpperCase_Return_True()" classname="com.bridgelabz.UserRegistrationTest" time="0.001"/>
-  <system-out><![CDATA[]]></system-out>
+  <testcase name="givenLastName_ShouldStartWith_UpperCase_Return_True()" classname="com.bridgelabz.UserRegistrationTest" time="0.002"/>
+  <system-out><![CDATA[Invalid 
+ Enter Valid Password
+Invalid 
+ Enter Valid Password
+Invalid 
+ Enter a valid number
+Email is Valid
+Invalid 
+ Enter a valid Email
+Invalid 
+ Enter a valid number
+Invalid 
+ Enter Valid Password
+Invalid Name 
+ Enter valid name
+Invalid Name 
+ Enter valid name
+Entered FirstName is Valid
+Password is Valid
+Email is Valid
+Invalid 
+ Enter valid Last Name
+Phone number is Valid
+Entered FirstName is Valid
+]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

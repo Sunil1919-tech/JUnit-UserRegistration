@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 /**
+ * JUnit test to validate the User Entry
  * declaring the user registration class
  */
 public class UserRegistrationTest {
@@ -100,7 +101,7 @@ public class UserRegistrationTest {
         Assertions.assertFalse(result);
     }
 
-    //Test To Phone Number Does Have 10Numbers Return True
+    //Test To Phone Number Does Have 10Numbers Return false without country code
     @Test
     public void givenPhoneNumber_DoesNotHaveCountryCode_ReturnFalse() {
         //Checking Validate Phone Number With Pattern And Storing In result
