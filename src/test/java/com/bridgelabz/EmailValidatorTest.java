@@ -53,6 +53,6 @@ public class EmailValidatorTest {
 
     @Test
     public void testUserEmail() {
-        Assertions.assertEquals(expectedResult, userValidation.validateEmail(email));
+        Assertions.assertEquals(expectedResult, userValidation.ValidateEmail(email));
     }
 }

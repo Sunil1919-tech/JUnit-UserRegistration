@@ -106,6 +106,9 @@ public class UserRegistration {
         return result;
     }
 
+    public void SelectOption() {
+    }
+
     private static class REGEX_NAME {
 
     }
